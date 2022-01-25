@@ -14,3 +14,8 @@ https://urldecoder.herokuapp.com/
 ## License
 このプロジェクトはThe Unlicenseです。
 ご自由にお使いいただいて問題ないですが、こちらに関わる如何なる事象にも責任を負えませんし、動作の保証も行いませんのでご了承ください。
+
+## attribution
+コードは問題ないですが、faviconは別の作者がいますので、丸っとご利用の際にはご注意ください。
+こちらから使わせていただきました。
+made by [Smashicons](https://www.freepik.com/) from www.flaticon.com
