@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <style type="text/css">
+            body {
+                color: #333333;
+            }
+
+            textarea {
+                width: 50rem;
+                height: 8rem;
+                font-size: 0.7rem;
+            }
+
+            li {
+                list-style-type: none
+            }
+
+            table {
+                font-size: 0.7rem;
+                border-collapse: collapse;
+                border: solid 2px #333333;
+            }
+
+            td,
+            th {
+                padding: 0.2rem;
+                border: 0.1rem solid #333333;
+                max-width: 30rem;
+                word-wrap: break-word;
+                min-width: 8rem;
+            }
+
+            .attribution {
+                font-size: 0.5rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>
+            URL Decoder
+        </h1>
+        <form>
+            <div>
+                <textarea id="uri" name="input" placeholder=""></textarea>
+            </div>
+            <br />
+            <div>
+                <button type="button">convert ＆ copy</button>
+            </div>
+        </form>
+        <br/>
+        <div>
+            <textarea id="output" name="output" placeholder=""></textarea>
+        </div>
+        <script type="text/javascript">
+            $('button').on("click", function () {
+                const $t = $("#output");
+                $t.empty();
+                $t.val(decodeURIComponent($("#uri").val()));
+                $t.select();
+                document.execCommand('copy');
+            })
+        </script>
+    </body>
+</html>
