@@ -9,6 +9,7 @@ URLデコードしつつクリップボードにコピーしてくれるJSが欲
 同様なwebサービスはたくさんありましたが、手動コピーが面倒だったので作ったものをせっかくだから公開しました。
 
 同じものをHerokuに上げています。
+
 https://urldecoder.herokuapp.com/
 
 ## License
@@ -18,4 +19,5 @@ https://urldecoder.herokuapp.com/
 ## attribution
 コードは問題ないですが、faviconは別の作者がいますので、丸っとご利用の際にはご注意ください。
 こちらから使わせていただきました。
-made by [Smashicons](https://www.freepik.com/) from www.flaticon.com
+
+Open icons(favicon) created by [Freepik](https://www.flaticon.com/free-icons/open) - [Flaticon](https://www.flaticon.com/)
