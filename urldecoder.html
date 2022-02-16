@@ -63,7 +63,7 @@
                 <button type="button" id='cnc'>convert ＆ copy</button>
                 <input type="checkbox" id="d2s" name="d2s" value="true" checked>
                 <label for="d2s">Replace Double quote(") to Singe quote(')</label>
-                <input type="checkbox" id="decode" name="decode" value="true" checked>
+                <input type="checkbox" id="decode" name="decode" value="true">
                 <label for="decode">Use decodeURIComponent</label>
             </div>
         </form>
@@ -76,9 +76,9 @@
         
         <script type="text/javascript">
             const cnc = () => {
-                const val = $("#d2s")?$("#uri").val().replaceAll("\"","'"):$("#uri").val();
+                const val = $("#d2s").prop('checked')?$("#uri").val().replaceAll("\"","'"):$("#uri").val();
                 const $t = $("#output").empty();
-                $t.val($("#decode")?decodeURI(val):decodeURIComponent(val)).select();
+                $t.val($("#decode").prop('checked')?decodeURIComponent(val):decodeURI(val)).select();
                 document.execCommand('copy');
                 document.getSelection().empty($t);
             }
