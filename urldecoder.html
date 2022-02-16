@@ -77,8 +77,8 @@
         <script type="text/javascript">
             const cnc = () => {
                 const val = $("#d2s")?$("#uri").val().replaceAll("\"","'"):$("#uri").val();
-                const $t = $("#output").empty().select();
-                $("#decode")?$t.val(decodeURI(val)):$t.val(decodeURIComponent(val));
+                const $t = $("#output").empty();
+                $t.val($("#decode")?decodeURI(val):decodeURIComponent(val)).select();
                 document.execCommand('copy');
                 document.getSelection().empty($t);
             }
