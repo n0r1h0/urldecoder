@@ -38,6 +38,11 @@
             .attribution {
                 font-size: 0.5rem;
             }
+
+            input[type=checkbox]{
+                margin-left: 15px;
+                margin-right: 0;
+            }
         </style>
     </head>
 
@@ -52,19 +57,23 @@
             <br />
             <div>
                 <button type="button">convert ＆ copy</button>
+                <input type="checkbox" id="d2s" name="d2s" value="true" checked>
+                <label for="d2s">Replace Double quote(") to Singe quote(')</label>
             </div>
         </form>
         <br/>
         <div>
             <textarea id="output" name="output" placeholder=""></textarea>
         </div>
+        <br />
         <div class="attribution"><a href="https://www.flaticon.com/free-icons/open" title="open icons">Open icons(favicon) created by Freepik - Flaticon</a></div>
         
         <script type="text/javascript">
             $('button').on("click", function () {
                 const $t = $("#output");
                 $t.empty();
-                $t.val(decodeURIComponent($("#uri").val()));
+                const val = $("#d2s")?$("#uri").val().replaceAll("\"","'"):$("#uri").val();
+                $t.val(decodeURIComponent(val));
                 $t.select();
                 document.execCommand('copy');
             })
