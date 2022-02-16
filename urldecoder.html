@@ -52,13 +52,19 @@
         </h1>
         <form>
             <div>
+                <button type="button" id='pncnc'>past & convert ＆ copy</button>
+            </div>
+            <br />
+            <div>
                 <textarea id="uri" name="input" placeholder=""></textarea>
             </div>
             <br />
             <div>
-                <button type="button">convert ＆ copy</button>
+                <button type="button" id='cnc'>convert ＆ copy</button>
                 <input type="checkbox" id="d2s" name="d2s" value="true" checked>
                 <label for="d2s">Replace Double quote(") to Singe quote(')</label>
+                <input type="checkbox" id="decode" name="decode" value="true" checked>
+                <label for="decode">Use decodeURIComponent</label>
             </div>
         </form>
         <br/>
@@ -69,14 +75,25 @@
         <div class="attribution"><a href="https://www.flaticon.com/free-icons/open" title="open icons">Open icons(favicon) created by Freepik - Flaticon</a></div>
         
         <script type="text/javascript">
-            $('button').on("click", function () {
-                const $t = $("#output");
-                $t.empty();
+            const cnc = () => {
                 const val = $("#d2s")?$("#uri").val().replaceAll("\"","'"):$("#uri").val();
-                $t.val(decodeURIComponent(val));
-                $t.select();
+                const $t = $("#output").empty().select();
+                $("#decode")?$t.val(decodeURI(val)):$t.val(decodeURIComponent(val));
                 document.execCommand('copy');
-            })
+                document.getSelection().empty($t);
+            }
+            $('#cnc').on("click", cnc);
+            const paste = cb => {
+                if(navigator.clipboard){
+                    navigator.clipboard.readText().then((t) => cb(t));
+                }
+            }
+            $('#pncnc').on("click", () => {
+                paste(t => {
+                    $("#uri").val(t);
+                    cnc();
+                });
+            });
         </script>
     </body>
 </html>
