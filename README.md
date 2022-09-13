@@ -8,9 +8,9 @@ jQueryだけ別ソース（google apis)から取っています。
 URLデコードしつつクリップボードにコピーしてくれるJSが欲しく、
 同様なwebサービスはたくさんありましたが、手動コピーが面倒だったので作ったものをせっかくだから公開しました。
 
-同じものをHerokuに上げています。
-
-https://urldecoder.herokuapp.com/
+~~同じものをHerokuに上げています。~~
+~~https://urldecoder.herokuapp.com/~~
+Heroku無料枠廃止に伴い停止しました。
 
 ## License
 このプロジェクトはThe Unlicenseです。
